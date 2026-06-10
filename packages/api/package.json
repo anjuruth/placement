@@ -1,0 +1,27 @@
+{
+  "name": "@placement/api",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@placement/auth": "workspace:*",
+    "@placement/db": "workspace:*",
+    "@placement/env": "workspace:*",
+    "@trpc/client": "catalog:",
+    "@trpc/server": "catalog:",
+    "dotenv": "catalog:",
+    "next": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@placement/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

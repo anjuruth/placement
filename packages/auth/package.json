@@ -1,0 +1,24 @@
+{
+  "name": "@placement/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@placement/db": "workspace:*",
+    "@placement/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@placement/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}
