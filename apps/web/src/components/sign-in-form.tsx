@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import z from "zod";
 
 import { authClient } from "@/lib/auth-client";
+import { getAuthErrorDetails, getAuthErrorMessage } from "@/lib/auth-error";
 
 import Loader from "./loader";
 
@@ -31,7 +32,9 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
             toast.success("Sign in successful");
           },
           onError: (error) => {
-            toast.error(error.error.message || error.error.statusText);
+            const details = getAuthErrorDetails(error);
+            console.error("Sign in failed", details);
+            toast.error(getAuthErrorMessage(error, "signIn"));
           },
         },
       );

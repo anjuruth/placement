@@ -27,7 +27,7 @@ bun install
 This project uses PostgreSQL with Drizzle ORM.
 
 1. Make sure you have a PostgreSQL database set up.
-2. Update your `apps/web/.env` file with your PostgreSQL connection details.
+2. Copy `apps/web/.env.example` to `apps/web/.env` and update values.
 
 3. Apply the schema to your database:
 
@@ -42,6 +42,17 @@ bun run dev
 ```
 
 Open [http://localhost:3001](http://localhost:3001) in your browser to see the fullstack application.
+
+## Authentication Environment
+
+Auth is powered by Better Auth and requires these values in `apps/web/.env`:
+
+- `BETTER_AUTH_SECRET`: random secret with at least 32 characters.
+- `BETTER_AUTH_URL`: should point to the auth handler base path (local default: `http://localhost:3001/api/auth`).
+- `CORS_ORIGIN`: optional, comma-separated allowed origins. If omitted, the origin of `BETTER_AUTH_URL` is trusted.
+- `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`: optional, only needed for Google OAuth.
+
+If sign-in fails with origin/provider errors, verify these values first.
 
 ## UI Customization
 
